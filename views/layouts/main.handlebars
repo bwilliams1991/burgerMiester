@@ -27,11 +27,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	 crossorigin="anonymous"></script>
 	<script>
-		$("form").on("submit", (e) => {
+		$("form").on("submit", ".devoured", (e) => {
 			e.preventDefault();
-			$.post("/burgers/:id", function (data) {
-				$(".result").html(data);
-			});
+
+			console.log("made it here!");
+
+			{{!-- $.post("/burgers/:id", function (data) {
+				//	$(".result").html(data);
+			
+
+				console.log("this was sucessful: ", data);
+			}); --}}
 		});
 	</script>
 </body>

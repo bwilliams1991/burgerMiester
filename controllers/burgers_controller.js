@@ -22,20 +22,20 @@ router.get("/", function (req, res) {
 router.post("/burgers", function (req, res) {
 	burger.create(["burger_name"], [req.body.burger_name], function (data) {
 		// Send back the ID of the new quote
-		res.redirect('/');
+		res.redirect('/index');
 
 	});
 });
 
 router.put("/burgers/:id", function (req, res) {
-	var condition = "id = " + req.params.id;
-	
+	var condition = "id:" + req.params.id;
+
 	console.log("condition", condition);
 
 	burger.update({
 		devoured: true
 	}, condition, function (data) {
-		res.redirect('/');
+		res.redirect('/index');
 	});
 });
 

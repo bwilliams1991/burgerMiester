@@ -55,14 +55,16 @@ var orm = {
 		});
 	},
 	updateOne: (table, objColVals, condition, cb) => {
-		var queryString = "UPDATE " + table;
+		var queryString = "UPDATE " + table + " SET " + "devoured = 1 WHERE " + condition;
+		
+		// var queryString = "UPDATE " + table;
+		// queryString += " SET ";
+		// queryString += " devoured  = 1"
+		// // queryString += objToSql(objColVals);
+		// queryString += " WHERE ";
+		// queryString += condition;
 
-		queryString += " SET ";
-		queryString += objToSql(objColVals);
-		queryString += " WHERE ";
-		queryString += condition;
-
-		// console.log(queryString);
+		console.log(queryString);
 
 		connection.query(queryString, (err, result) => {
 			if (err) {
