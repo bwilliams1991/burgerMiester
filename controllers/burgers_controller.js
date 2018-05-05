@@ -28,14 +28,14 @@ router.post("/burgers", function (req, res) {
 });
 
 router.put("/burgers/:id", function (req, res) {
-	var condition = "id:" + req.params.id;
+	var condition = "id =" + req.params.id;
 
 	console.log("condition", condition);
 
 	burger.update({
 		devoured: true
 	}, condition, function (data) {
-		res.redirect('/index');
+		res.redirect('/');
 	});
 });
 
