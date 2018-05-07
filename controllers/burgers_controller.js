@@ -13,7 +13,7 @@ router.get("/", function (req, res) {
 		var hbsObject = {
 			burgers: data
 		};
-		console.log(hbsObject);
+		// console.log(hbsObject);
 		res.render("index", hbsObject);
 	});
 });
@@ -22,15 +22,15 @@ router.get("/", function (req, res) {
 router.post("/burgers", function (req, res) {
 	burger.create(["burger_name"], [req.body.burger_name], function (data) {
 		// Send back the ID of the new quote
-		res.redirect('/index');
+		res.redirect('/');
 
 	});
 });
 
 router.put("/burgers/:id", function (req, res) {
-	var condition = "id =" + req.params.id;
+	var condition = "id = " + req.params.id;
 
-	console.log("condition", condition);
+	// console.log("condition", condition);
 
 	burger.update({
 		devoured: true
