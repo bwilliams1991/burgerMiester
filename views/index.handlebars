@@ -1,16 +1,23 @@
-<h1>Burgers!</h1>
-
-
 <main>
-	<div class="container">
+	<div class="container text-center">
+		<div class="row">
+			<div class="header col-md-12">
+
+				<h1 class="text-center">Burgers!</h1>
+
+				<img src="./public/assets/img/burger.png" alt="picture of a burger">
+
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-md-6">
 
 				{{#each burgers}} {{#unless this.devoured}}
 				<div>
 					<form action="/burgers/{{this.id}}?_method=PUT" method="POST" class="devoured">
-					<input type="hidden" name="devoured" value="true">
-						<button type="submit">{{this.id}}. {{this.burger_name}}</button>
+						<input type="hidden" name="devoured" value="true">
+						<button type="submit" class="button_font">{{this.id}}. {{this.burger_name}}</button>
 					</form>
 				</div>
 				{{/unless}} {{/each}}
@@ -33,15 +40,13 @@
 	</div>
 </main>
 
-<h2>Add a Burger</h2>
 
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-12 text-center">
+		<h2>Add a Burger</h2>
 		<form action="/burgers" method="post">
 			<input type="text" name="burger_name" id="name">
 			<button type="submit">Add the burger!</button>
 		</form>
 	</div>
 </div>
-
-

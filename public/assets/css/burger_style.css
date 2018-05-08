@@ -1,0 +1,31 @@
+body {
+	background: black url("../img/background.png")
+	/* no-repeat */
+	fixed center;
+	background-size: contain;
+	color: white;
+	font-family: 'Knewave', cursive;
+}
+
+h1,
+h2,
+button {
+	color: black;
+}
+
+button_font {
+	font-family: 'Marck Script', cursive;
+}
+
+input {
+	color: black;
+	font-family: 'Marck Script', cursive;
+}
+
+.eaten {
+	text-shadow:
+	-1px -1px 0 #000,
+	 2px -1px 0 #000,
+	-1px  2px 0 #000,
+	 1px  1px 0 #000;
+}
